@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ирина Кокшарова — нутрициолог</title>
+<meta name="description" content="Нутрициолог и фитнес-тренер Ирина Кокшарова. Снижение веса без жёстких диет и срывов. Бесплатная диагностика, онлайн-сопровождение до результата.">
+<meta property="og:title" content="Ирина Кокшарова — нутрициолог и фитнес-тренер">
+<meta property="og:description" content="Снижение веса без жёстких диет и срывов. Запишитесь на бесплатную диагностику.">
+<meta property="og:image" content="https://koksharova-nutri.github.io/img/hero.jpg">
+<meta property="og:url" content="https://koksharova-nutri.github.io/">
+<meta name="theme-color" content="#F5F2EC">
+<link rel="icon" href="img/ava.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F2EC; --card:#FBF9F5; --line:#E2DDD5;
+  --sage:#E4E4DB; --beige:#EBE2D6;
+  --olive:#5E7052; --olive-d:#4E5E44; --on-olive:#F5F2EC;
+  --ink:#2A1F17; --brown:#6B5446; --taupe:#A3968A; --terra:#D3A589;
+  --head:'Inter Tight',system-ui,sans-serif; --body:'Onest',system-ui,sans-serif; --lab:'Unbounded',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.5 var(--body);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px;position:relative}
+section{position:relative;padding:64px 0}
+.circle{position:absolute;border-radius:50%;z-index:0;pointer-events:none}
+.label{display:inline-block;font:600 11px/1 var(--lab);letter-spacing:.16em;text-transform:uppercase;color:var(--brown);border:1.5px solid var(--taupe);border-radius:40px;padding:9px 16px}
+h1,h2,h3{font-family:var(--head);font-weight:800;letter-spacing:-.03em;line-height:1.02}
+h2{font-size:clamp(32px,7vw,52px);margin-top:18px}
+.pl{display:inline-block;background:var(--olive);color:var(--on-olive);padding:0 .28em .12em;border-radius:.2em;transform:rotate(-1.5deg)}
+.lead{border-left:5px solid var(--terra);padding-left:18px;color:var(--brown);font-size:19px;line-height:1.4;margin-top:22px}
+.lead b{color:var(--ink);font-weight:600}
+.num{font:600 11px var(--lab);letter-spacing:.14em;color:var(--taupe)}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;border-radius:999px;font:800 15px/1 var(--head);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;padding:20px 24px;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--olive);color:var(--on-olive)}
+.btn-main:hover{background:var(--olive-d)}
+.btn-line{border:1.5px solid var(--taupe);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--card)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btns .btn{flex:1 1 220px}
+
+/* шапка */
+.top{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px;position:relative;z-index:2}
+.logo{font:600 12px var(--lab);letter-spacing:.14em;text-decoration:none}
+.top nav{display:none;gap:26px;font-size:15px;color:var(--brown)}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--ink)}
+
+/* первый экран */
+.hero{padding:8px 0 56px;overflow:hidden}
+.hero .grid{display:grid;gap:28px;position:relative;z-index:1}
+.hero h1{font-size:clamp(40px,10.5vw,76px);margin-top:20px}
+.hero h1 .pl{margin-top:6px}
+.photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--beige)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.badge{position:absolute;left:14px;bottom:14px;background:var(--card);border-radius:18px;padding:12px 16px;box-shadow:0 8px 24px rgba(42,31,23,.12);font-size:14px;line-height:1.3;color:var(--brown)}
+.badge b{display:block;font:800 20px var(--head);color:var(--olive);letter-spacing:-.02em}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
+.fact{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:14px 12px}
+.fact b{display:block;white-space:nowrap;font:800 clamp(20px,5.4vw,30px)/1 var(--head);letter-spacing:-.03em;color:var(--olive)}
+.fact span{display:block;font-size:13px;line-height:1.3;color:var(--brown);margin-top:6px}
+
+/* кому */
+.cards{display:grid;gap:10px;margin-top:28px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:16px;display:grid;grid-template-columns:40px 1fr;column-gap:14px;align-items:start;align-content:start}
+.card .ico{grid-row:span 2}
+.card h3{font-size:18px;letter-spacing:-.02em;margin:2px 0 4px}
+.card p{color:var(--brown);font-size:15px;line-height:1.4}
+.ico{width:40px;height:40px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-size:19px}
+
+/* шаги */
+.steps{display:grid;gap:12px;margin-top:32px;counter-reset:s}
+.step{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:24px;padding:22px}
+.step .n{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--olive);color:var(--on-olive);display:flex;align-items:center;justify-content:center;font:800 18px var(--head)}
+.step h3{font-size:20px;letter-spacing:-.02em;margin-bottom:4px}
+.step p{color:var(--brown);font-size:16px}
+
+
+/* питание */
+.food{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:12px;margin:32px -16px 0;padding:0 16px 6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;scrollbar-width:none}
+.food::-webkit-scrollbar{display:none}
+.food figure{scroll-snap-align:start;background:var(--card);border:1.5px solid var(--line);border-radius:24px;overflow:hidden}
+.food img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.food figcaption{padding:16px 18px 18px;color:var(--brown);font-size:16px;line-height:1.4}
+.food figcaption b{display:block;font:800 19px var(--head);letter-spacing:-.02em;color:var(--ink);margin-bottom:4px}
+
+
+/* результаты */
+.res{display:grid;gap:14px;margin-top:14px}
+.bas{display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:12px;margin:32px -16px 0;padding:0 16px 6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;scrollbar-width:none}
+.bas::-webkit-scrollbar{display:none}
+.bas .ba{scroll-snap-align:start}
+.revs{display:grid;grid-auto-flow:column;grid-auto-columns:85%;gap:12px;margin:20px -16px 0;padding:0 16px 6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;scrollbar-width:none;align-items:start}
+.revs::-webkit-scrollbar{display:none}
+.rev{scroll-snap-align:start;border-radius:22px;overflow:hidden;border:1.5px solid var(--line);background:#EFE7DB}
+.rev img{width:100%;height:auto}
+.sub-h{font:800 24px var(--head);letter-spacing:-.02em}
+.sub-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:44px}
+.swipe{font:600 10px var(--lab);letter-spacing:.14em;text-transform:uppercase;color:var(--taupe);white-space:nowrap}
+.ba{position:relative;border-radius:28px;overflow:hidden;background:var(--beige)}
+.ba img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.ba .tag{position:absolute;top:14px;font:600 11px/1 var(--lab);letter-spacing:.14em;background:var(--card);color:var(--ink);border-radius:20px;padding:8px 12px}
+.ba .tag.after{background:var(--olive);color:var(--on-olive)}
+.res-side{display:flex;flex-direction:column;gap:14px}
+.res-num{background:var(--olive);color:var(--on-olive);border-radius:28px;padding:26px 24px}
+.res-num b{display:block;font:800 clamp(48px,13vw,72px)/1 var(--head);letter-spacing:-.04em}
+.res-num span{display:block;margin-top:8px;color:#E6EBE0}
+.res-txt{background:var(--card);border:1.5px solid var(--line);border-radius:28px;padding:24px;color:var(--brown)}
+.res-txt b{color:var(--ink);font-weight:600}
+.res-txt .btn{margin-top:20px;width:100%}
+.consent{font-size:13px;color:var(--taupe);margin-top:10px}
+
+/* тарифы */
+.tarifs{display:grid;gap:14px;margin-top:32px}
+.tarif{background:var(--card);border:1.5px solid var(--line);border-radius:28px;padding:26px 22px;display:flex;flex-direction:column}
+.tarif.free{background:var(--olive);border-color:var(--olive);color:var(--on-olive)}
+.tarif.free .num{color:#C9D1C1}
+.tarif.free .dur,.tarif.free li{color:#E6EBE0}
+.tarif.free .ck{background:var(--on-olive);color:var(--olive)}
+.tarif.hit{border-color:var(--terra);box-shadow:0 0 0 1.5px var(--terra) inset}
+.tarif h3{font-size:28px;margin-top:10px}
+.price{display:flex;align-items:baseline;gap:14px;margin-top:14px;flex-wrap:wrap}
+.price b{font:800 38px/1 var(--head);letter-spacing:-.03em;color:var(--olive)}
+.tarif.free .price b{color:var(--on-olive)}
+.dur{font-size:15px;color:var(--brown);border-left:4px solid var(--terra);padding-left:12px;line-height:1.25}
+.tarif ul{list-style:none;margin:20px 0 24px;display:flex;flex-direction:column;gap:12px}
+.tarif li{display:flex;gap:12px;color:var(--brown);font-size:16px;line-height:1.4}
+.tarif li b{color:inherit;font-weight:600}
+.tarif:not(.free) li b{color:var(--ink)}
+.ck{flex:0 0 24px;height:24px;border-radius:50%;background:var(--olive);color:var(--on-olive);display:flex;align-items:center;justify-content:center;font:700 13px var(--head);margin-top:1px}
+.tarif .btn{margin-top:auto}
+.tarif.free .btn{background:var(--on-olive);color:var(--olive)}
+.hit-tag{align-self:flex-start;font:600 10px var(--lab);letter-spacing:.14em;background:var(--terra);color:var(--ink);border-radius:20px;padding:6px 12px;margin-bottom:12px}
+.note{margin-top:18px;font-size:15px;color:var(--brown);text-align:center}
+
+/* обо мне */
+.about{overflow:hidden}
+.about .grid{display:grid;gap:28px;position:relative;z-index:1}
+.about .photo{aspect-ratio:3/4}
+.list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.list li{display:flex;gap:12px;color:var(--brown)}
+.list li::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:var(--terra);margin-top:9px}
+.list b{color:var(--ink);font-weight:600}
+.sub{font:800 21px var(--head);letter-spacing:-.02em;margin-top:28px}
+details{margin-top:24px;background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:18px 20px}
+summary{cursor:pointer;font:800 17px var(--head);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:26px;line-height:1;color:var(--olive);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details .list{margin-top:16px}
+
+/* гайд */
+.guide{background:var(--sage);border-radius:32px;padding:32px 22px;position:relative;overflow:hidden}
+.guide h2{font-size:clamp(28px,6.5vw,44px)}
+.guide p{color:var(--brown);margin-top:14px;max-width:560px}
+
+/* финал */
+.final{text-align:center}
+.final .lead{border:0;padding:0;max-width:560px;margin:18px auto 0}
+.final .btns{justify-content:center;max-width:560px;margin-left:auto;margin-right:auto}
+.socials{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+.socials a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:15px;color:var(--brown);border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:10px 16px}
+.socials a:hover{color:var(--ink);border-color:var(--taupe)}
+footer{text-align:center;padding:24px 16px 110px;font-size:13px;color:var(--taupe)}
+
+/* липкая кнопка на телефоне */
+.sticky{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:50;transform:translateY(140%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;box-shadow:0 10px 30px rgba(42,31,23,.25)}
+
+@media (min-width:760px){
+  body{font-size:18px}
+  section{padding:96px 0}
+  .wrap{padding:0 32px}
+  .top nav{display:flex}
+  .hero .grid{grid-template-columns:1.15fr .85fr;align-items:center;gap:48px}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .res{grid-template-columns:1fr 1fr;align-items:stretch}
+  .bas{grid-auto-flow:row;grid-template-columns:1fr 1fr;margin:40px 0 0;padding:0;overflow:visible}
+  .revs{grid-auto-columns:340px;gap:14px;margin:24px 0 0;padding:0 0 10px;scroll-padding-inline:0;scrollbar-width:thin}
+  .revs::-webkit-scrollbar{display:block;height:6px}
+  .revs::-webkit-scrollbar-thumb{background:var(--taupe);border-radius:3px}
+  .food{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);margin:40px 0 0;padding:0;overflow:visible}
+  .step{flex-direction:column}
+  .tarifs{grid-template-columns:repeat(2,1fr)}
+  .about .grid{grid-template-columns:.8fr 1.2fr;align-items:start;gap:56px}
+  .guide{padding:56px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px}
+  .guide .btns{margin-top:0}
+  .sticky{display:none}
+  footer{padding-bottom:32px}
+}
+@media (min-width:1040px){
+  .tarifs{grid-template-columns:repeat(4,1fr)}
+  .tarif{padding:26px 20px}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="logo" href="#">ИРИНА КОКШАРОВА</a>
+  <nav>
+    <a href="#who">Кому</a><a href="#how">Как работаем</a><a href="#about">Обо мне</a><a href="#results">Результаты</a><a href="#price">Тарифы</a>
+  </nav>
+</header>
+
+<!-- ПЕРВЫЙ ЭКРАН -->
+<section class="hero">
+  <div class="circle" style="width:420px;height:420px;background:var(--beige);right:-170px;top:-150px"></div>
+  <div class="circle" style="width:300px;height:300px;background:var(--sage);left:-150px;bottom:-60px"></div>
+  <div class="wrap grid">
+    <div>
+      <span class="label">Нутрициолог · фитнес-тренер</span>
+      <h1>Стройность без диет <span class="pl">и срывов</span></h1>
+      <p class="lead"><b>Сначала налаживаем здоровье: энергию, сон, пищеварение.</b> Фигура приходит следом и уже не возвращается обратно.</p>
+      <div class="btns">
+        <a class="btn btn-main" href="https://max.ru/u/f9LHodD0cOJH58K8ZPtzKW0og7XPkzHibW2YTEYB-PoygCx80ie4yoeTp2A" target="_blank" rel="noopener">Бесплатная диагностика →</a>
+        <a class="btn btn-line" href="#price">Тарифы</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>с 2013</b><span>работаю с питанием и телом</span></div>
+        <div class="fact"><b>200+ кг</b><span>сбросили клиенты вместе со мной</span></div>
+        <div class="fact"><b>МС</b><span>мастер спорта по пауэрлифтингу</span></div>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="img/hero.jpg" alt="Ирина Кокшарова, нутрициолог" width="880" height="1100" fetchpriority="high">
+      <div class="badge"><b>Онлайн</b>из любого города</div>
+    </div>
+  </div>
+</section>
+
+<!-- КОМУ -->
+<section id="who">
+  <div class="wrap">
+    <span class="label">Кому подхожу</span>
+    <h2>Если вы узнали <span class="pl">себя</span></h2>
+    <div class="cards">
+      <div class="card"><div class="ico">⚖️</div><h3>Вес стоит или возвращается</h3><p>Хотите минус 3–5 кг в месяц без голодовок и запретов, и чтобы результат остался.</p></div>
+      <div class="card"><div class="ico">🌿</div><h3>Нет сил и энергии</h3><p>Сонливость днём, снижено либидо, тяга к сладкому. Ищем причину в анализах и питании.</p></div>
+      <div class="card"><div class="ico">🤱</div><h3>Восстановление после родов</h3><p>Вернуть форму, тонус мышц и привычку тренироваться: дома или в зале.</p></div>
+      <div class="card"><div class="ico">🩺</div><h3>Щитовидка, инсулин</h3><p>Гипотиреоз, инсулинорезистентность: питание и режим, которые помогают, вместе с вашим врачом.</p></div>
+      <div class="card"><div class="ico">🍳</div><h3>Нет времени на готовку</h3><p>Простое меню и список покупок: меньше времени в магазине и у плиты, больше с семьёй.</p></div>
+      <div class="card"><div class="ico">🪞</div><h3>Хочется нравиться себе</h3><p>Разобраться в питании раз и навсегда и полюбить своё отражение в зеркале.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- КАК РАБОТАЕМ -->
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <span class="label">Как проходит работа</span>
+    <h2>Три шага <span class="pl">к результату</span></h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><h3>Бесплатная диагностика</h3><p>Знакомимся, обсуждаем вашу цель и ситуацию. Подскажу, какой формат подойдёт.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Анкета и анализы</h3><p>Присылаю опросник и список анализов. По ним видно дефициты и то, что мешает худеть.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>План и сопровождение</h3><p>Питание, режим, нагрузка, добавки, и я рядом, пока вы не дойдёте до цели.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ОБО МНЕ -->
+<section id="about" class="about" style="padding-top:0">
+  <div class="circle" style="width:360px;height:360px;background:var(--beige);left:-160px;top:40px"></div>
+  <div class="wrap grid">
+    <div class="photo"><img src="img/about.jpg" alt="Ирина Кокшарова с блокнотом" width="666" height="1000" loading="lazy"></div>
+    <div>
+      <span class="label">Обо мне</span>
+      <h2>Привет, я <span class="pl">Ирина</span></h2>
+      <p class="lead">Нутрициолог, специалист по питанию и фитнес-тренер. <b>Работаю с 2013 года</b> и сама прошла путь от большого спорта до спокойного, здорового питания без крайностей.</p>
+      <p class="sub">Со мной клиенты</p>
+      <ul class="list">
+        <li><span><b>подготовили здоровье</b> к долгожданной беременности</span></li>
+        <li><span><b>наладили питание</b> при гипотиреозе и инсулинорезистентности</span></li>
+        <li><span><b>прошли 21 марафон</b> по питанию</span></li>
+      </ul>
+      <p class="sub">Спорт</p>
+      <ul class="list">
+        <li><span><b>Мастер спорта России</b> по пауэрлифтингу</span></li>
+        <li><span><b>Мастер спорта международного класса</b> по становой тяге</span></li>
+        <li><span>Чемпионка России и Европы, <b>рекордсменка мира</b> по становой тяге и пауэрлифтингу среди юниоров</span></li>
+      </ul>
+      <details>
+        <summary>Образование и сертификаты</summary>
+        <ul class="list">
+          <li><span>Высшее: УрГПУ, Институт физической культуры</span></li>
+          <li><span>Международный институт интегративной нутрициологии</span></li>
+          <li><span>Институт функциональной интегративной диетологии PLS, 2020</span></li>
+          <li><span>Курс нутрициологии и диетологии А. Золотарёва</span></li>
+          <li><span>Повышение квалификации «Спортивная диетология», 2020</span></li>
+          <li><span>Год медицинского колледжа с отличием</span></li>
+          <li><span>Уральский учебно-курсовой центр аэробики и фитнеса: функциональный тренинг, базовая аэробика, TRX, тренировки беременных и восстановление после родов</span></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ПИТАНИЕ -->
+<section id="food" style="padding-top:0">
+  <div class="wrap">
+    <span class="label">Питание</span>
+    <h2>Еда без <span class="pl">запретов</span></h2>
+    <p class="lead"><b>Не нужно жить на гречке с курицей.</b> Учу собирать тарелку из обычных продуктов и делать покупки без стресса и долгих поисков.</p>
+    <div class="food">
+      <figure><img src="img/m1.jpg" alt="Ирина выбирает фрукты на рынке" width="720" height="900" loading="lazy"><figcaption><b>Овощи и фрукты</b>Сколько и каких нужно на день, чтобы хватало клетчатки и витаминов</figcaption></figure>
+      <figure><img src="img/m2.jpg" alt="Ирина у витрины с рыбой" width="720" height="900" loading="lazy"><figcaption><b>Белок</b>Рыба, мясо, молочное: как выбрать и сколько нужно именно вам</figcaption></figure>
+      <figure><img src="img/m3.jpg" alt="Ирина с орехами в руках" width="720" height="900" loading="lazy"><figcaption><b>Перекусы</b>Орехи и сухофрукты: польза без переедания</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- РЕЗУЛЬТАТЫ -->
+<section id="results" style="padding-top:0">
+  <div class="wrap">
+    <span class="label">Результаты</span>
+    <h2>Результаты <span class="pl">клиентов</span></h2>
+    <div class="bas">
+      <div class="ba">
+        <img src="img/result1.jpg" alt="Клиентка до и после: минус 9,5 кг" width="1200" height="1200" loading="lazy">
+        <span class="tag" style="left:14px">ДО</span>
+        <span class="tag after" style="left:calc(50% + 14px)">ПОСЛЕ</span>
+      </div>
+      <div class="ba">
+        <img src="img/result2.jpg" alt="Клиентка до и после: минус 4,9 кг" width="1200" height="1200" loading="lazy">
+        <span class="tag" style="left:14px">ДО</span>
+        <span class="tag after" style="left:calc(50% + 14px)">ПОСЛЕ</span>
+      </div>
+    </div>
+    <p class="consent">Фото опубликованы с согласия клиенток</p>
+    <div class="res">
+      <div class="res-num"><b>200+ кг</b><span>сбросили клиенты вместе со мной, безопасно и без голодовок</span></div>
+      <div class="res-txt">
+        <p><b>Меняется не только вес.</b> Уходят объёмы, появляются энергия и тонус, а новые привычки в питании остаются с вами и после сопровождения.</p>
+        <a class="btn btn-main" href="https://max.ru/u/f9LHodD0cOJH58K8ZPtzKW0og7XPkzHibW2YTEYB-PoygCx80ie4yoeTp2A" target="_blank" rel="noopener">Хочу так же →</a>
+      </div>
+    </div>
+    <div class="sub-row"><h3 class="sub-h">Что пишут клиенты</h3><span class="swipe">листайте →</span></div>
+    <div class="revs">
+      <div class="rev"><img src="img/rv3.jpg" alt="Отзыв: очень изменилось питание, столько лёгкости, строгих запретов не ставлю, нет обжорства на ночь" width="900" height="680" loading="lazy"></div>
+      <div class="rev"><img src="img/rv4.jpg" alt="Отзыв: ощущение, что сбросила не 4 кг, а 10" width="900" height="501" loading="lazy"></div>
+      <div class="rev"><img src="img/rv2.jpg" alt="Отзыв: первый раз месячные безболезненные и без головных болей" width="828" height="313" loading="lazy"></div>
+      <div class="rev"><img src="img/rv5.jpg" alt="Отзыв: стул нормализовался, теперь каждый день" width="900" height="392" loading="lazy"></div>
+      <div class="rev"><img src="img/rv1.jpg" alt="Отзыв: уничтожаю сахар в холодильнике, он оказывается везде" width="828" height="192" loading="lazy"></div>
+    </div>
+    <p class="consent">Скриншоты переписок публикуются без имён</p>
+  </div>
+</section>
+
+<!-- ТАРИФЫ -->
+<section id="price" style="padding-top:0">
+  <div class="wrap">
+    <span class="label">Форматы и цены</span>
+    <h2>Выберите <span class="pl">свой формат</span></h2>
+    <div class="tarifs">
+      <div class="tarif free">
+        <span class="num">ШАГ 1</span>
+        <h3>Диагностика</h3>
+        <div class="price"><b>0 ₽</b><span class="dur">знакомство<br>и разбор цели</span></div>
+        <ul>
+          <li><span class="ck">✓</span><span><b>Разберём вашу ситуацию</b> и что мешает результату</span></li>
+          <li><span class="ck">✓</span><span><b>Подскажу формат</b>, который подойдёт именно вам</span></li>
+        </ul>
+        <a class="btn" href="https://max.ru/u/f9LHodD0cOJH58K8ZPtzKW0og7XPkzHibW2YTEYB-PoygCx80ie4yoeTp2A" target="_blank" rel="noopener">Записаться</a>
+      </div>
+      <div class="tarif">
+        <span class="num">ТАРИФ 01 · БАЗОВЫЙ</span>
+        <h3>Консультация с планом</h3>
+        <div class="price"><b>5 500 ₽</b><span class="dur">видеосозвон<br>1 час</span></div>
+        <ul>
+          <li><span class="ck">✓</span><span><b>Анкета заранее</b> и список анализов к созвону</span></li>
+          <li><span class="ck">✓</span><span><b>Разбираем анализы</b>, дефициты и вашу цель</span></li>
+          <li><span class="ck">✓</span><span><b>План питания</b>, нагрузки, добавки и каких врачей посетить, если нужно</span></li>
+          <li><span class="ck">✓</span><span><b>Все рекомендации</b> присылаю файлом</span></li>
+        </ul>
+        <a class="btn btn-line" href="https://max.ru/u/f9LHodD0cOJH58K8ZPtzKW0og7XPkzHibW2YTEYB-PoygCx80ie4yoeTp2A" target="_blank" rel="noopener">Выбрать</a>
+      </div>
+      <div class="tarif hit">
+        <span class="hit-tag">ЧАЩЕ ВЫБИРАЮТ</span>
+        <span class="num">ТАРИФ 02 · СРЕДНИЙ</span>
+        <h3>4 недели рядом</h3>
+        <div class="price"><b>12 500 ₽</b><span class="dur">сопровождение<br>4 недели</span></div>
+        <ul>
+          <li><span class="ck">✓</span><span><b>Всё из «Базового»</b>, плюс план питания и режим дня</span></li>
+          <li><span class="ck">✓</span><span><b>Подбор нагрузки</b> и добавок под анализы</span></li>
+          <li><span class="ck">✓</span><span><b>Чат со мной:</b> поддержка и проверка рациона</span></li>
+          <li><span class="ck">✓</span><span><b>Рецепты и 4 гайда:</b> от выбора продуктов до того, как быть при срыве</span></li>
+        </ul>
+        <a class="btn btn-main" href="https://max.ru/u/f9LHodD0cOJH58K8ZPtzKW0og7XPkzHibW2YTEYB-PoygCx80ie4yoeTp2A" target="_blank" rel="noopener">Выбрать</a>
+      </div>
+      <div class="tarif">
+        <span class="num">ТАРИФ 03 · ПОЛНЫЙ</span>
+        <h3>Ведение до результата</h3>
+        <div class="price"><b>23 000 ₽</b><span class="dur">«Средний»<br>+ 2 месяца</span></div>
+        <ul>
+          <li><span class="ck">✓</span><span><b>Всё из «Среднего»</b></span></li>
+          <li><span class="ck">✓</span><span><b>Ещё 2 месяца</b> ведения и поддержки</span></li>
+          <li><span class="ck">✓</span><span><b>Корректируем план</b> по новым анализам</span></li>
+          <li><span class="ck">✓</span><span><b>Доводим до вашей цели</b> без откатов</span></li>
+        </ul>
+        <a class="btn btn-line" href="https://max.ru/u/f9LHodD0cOJH58K8ZPtzKW0og7XPkzHibW2YTEYB-PoygCx80ie4yoeTp2A" target="_blank" rel="noopener">Выбрать</a>
+      </div>
+    </div>
+    <p class="note">Количество мест в сопровождении ограничено. Работаю с мужчинами и женщинами без острых форм заболеваний.</p>
+  </div>
+</section>
+
+<!-- ГАЙД -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="guide">
+      <div class="circle" style="width:260px;height:260px;background:var(--beige);right:-90px;top:-110px"></div>
+      <div style="position:relative">
+        <span class="label">Подарок</span>
+        <h2>Гайд «Калории: <span class="pl">считать или&nbsp;нет»</span></h2>
+        <p>Кому подсчёт помогает, а кому вредит, как посчитать свою норму за 5 минут и чем его заменить. Бесплатно в Telegram.</p>
+      </div>
+      <div class="btns" style="position:relative">
+        <a class="btn btn-main" href="https://t.me/Koksharovapostbot?start=site" target="_blank" rel="noopener">🎁 Забрать гайд</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФИНАЛ -->
+<section class="final" style="padding-top:0">
+  <div class="wrap">
+    <span class="label">Начнём?</span>
+    <h2>Первый шаг <span class="pl">бесплатный</span></h2>
+    <p class="lead">Напишите мне «ДИАГНОСТИКА», обсудим вашу цель и подберём формат. Ни к чему не обязывает.</p>
+    <div class="btns">
+      <a class="btn btn-main" href="https://max.ru/u/f9LHodD0cOJH58K8ZPtzKW0og7XPkzHibW2YTEYB-PoygCx80ie4yoeTp2A" target="_blank" rel="noopener">Написать в MAX</a>
+      <a class="btn btn-line" href="https://t.me/irina_koksharova72" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn btn-line" href="https://vk.me/irina_koksharova72" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+    </div>
+    <div class="socials">
+      <a href="https://t.me/irinakoksharova72" target="_blank" rel="noopener">📢 Telegram-канал</a>
+      <a href="https://vk.ru/irina_koksharova72" target="_blank" rel="noopener">💬 Сообщество ВК</a>
+    </div>
+  </div>
+</section>
+
+<footer>© Ирина Кокшарова, нутрициолог · Тюмень, онлайн</footer>
+
+<div class="sticky" id="sticky"><a class="btn btn-main" href="https://max.ru/u/f9LHodD0cOJH58K8ZPtzKW0og7XPkzHibW2YTEYB-PoygCx80ie4yoeTp2A" target="_blank" rel="noopener">Бесплатная диагностика →</a></div>
+
+<script>
+// липкая кнопка появляется, когда первый экран прокручен
+(function(){
+  var s=document.getElementById('sticky'), hero=document.querySelector('.hero');
+  if(!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(e){ s.classList.toggle('on', !e[0].isIntersecting); }).observe(hero);
+})();
+</script>
+</body>
+</html>
